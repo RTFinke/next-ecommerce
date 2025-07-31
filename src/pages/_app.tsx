@@ -35,6 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         --main-font: ${poppins.style.fontFamily};
       }
     `}</style>
+    {/* prettier-ignore */}
     <script
         id="siz3r_plugin"
         src="https://siz3r-next-interface.vercel.app/embedScript.js"

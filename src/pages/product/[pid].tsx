@@ -44,6 +44,7 @@ const Product = ({ product }: ProductPageType) => {
             <Gallery images={product.images} />
             <Content product={product} />
           </div>
+        {/* prettier-ignore */}
         <button
         onClick={() => {
           window.postMessage(
