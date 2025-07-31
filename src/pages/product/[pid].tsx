@@ -43,7 +43,20 @@ const Product = ({ product }: ProductPageType) => {
             <Gallery images={product.images} />
             <Content product={product} />
           </div>
-
+        <button
+        onClick={() => {
+          window.postMessage(
+            JSON.stringify({
+              type: "siz3r_tryon",
+              ggarment: product.images[0],
+              bodyPart: "upper", // "upper" / "lower" / "full"
+              token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJ6a3FxZ2JoZ3ZvNXpmdWo4YTF0ZmgiLCJidXNpbmVzc0lkIjoiZ1JvczdVYlhDR05MTnQzOHZ2UjdqdnJIOThyMSIsImlhdCI6MTc1MzM1ODY2NywiZXhwIjoxODM5NjcyMjY3fQ.-ID7Kq-UzrA8r6sndkGNhBRywCgUjDjktA1FpntDKRI",
+            }),
+            "*"
+          );
+        }}>
+        Przymierz z Siz3r
+      </button>
           <div className="product-single__info">
             <div className="product-single__info-btns">
               <button

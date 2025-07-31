@@ -34,6 +34,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         --main-font: ${poppins.style.fontFamily};
       }
     `}</style>
+    <script
+        id="siz3r_plugin"
+        src="https://siz3r-next-interface.vercel.app/embedScript.js"
+        noreload="true"
+      />
     <Component {...pageProps} />
   </Fragment>
 );
