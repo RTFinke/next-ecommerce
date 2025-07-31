@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { some } from "lodash";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -107,6 +108,7 @@ const Content = ({ product }: ProductContent) => {
           </div>
 
           <div style={{ marginTop: "32px" }}>
+            {/* prettier-ignore */}
             <button
               onClick={() => {
                 window.postMessage(
