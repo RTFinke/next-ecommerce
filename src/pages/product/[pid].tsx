@@ -34,7 +34,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
 const Product = ({ product }: ProductPageType) => {
   const [showBlock, setShowBlock] = useState("description");
-  console.debug(product)
   return (
     <Layout>
       <Breadcrumb />
@@ -45,8 +44,8 @@ const Product = ({ product }: ProductPageType) => {
             <Gallery images={product.images} />
             <Content product={product} />
           </div>
-        {/* prettier-ignore */}
-        <button
+          {/* prettier-ignore */}
+          <button
         onClick={() => {
           window.postMessage(
             JSON.stringify({
