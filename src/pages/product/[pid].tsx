@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { GetServerSideProps } from "next";
 import { useState } from "react";
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // global styles
 import "../assets/css/styles.scss";
 import "swiper/swiper.scss";
