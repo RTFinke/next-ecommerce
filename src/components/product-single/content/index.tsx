@@ -20,6 +20,7 @@ const Content = ({ product }: ProductContent) => {
   const [count, setCount] = useState<number>(1);
   const [color, setColor] = useState<string>("");
   const [itemSize, setItemSize] = useState<string>("");
+  const [hovered, setHovered] = useState<boolean>(false); // <--- do obsługi hovera
 
   const onColorSet = (e: string) => setColor(e);
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -28,15 +29,11 @@ const Content = ({ product }: ProductContent) => {
   const { favProducts } = useSelector((state: RootState) => state.user);
   const isFavourite = some(
     favProducts,
-    (productId) => productId === product.id,
+    (productId) => productId === product.id
   );
 
   const toggleFav = () => {
-    dispatch(
-      toggleFavProduct({
-        id: product.id,
-      }),
-    );
+    dispatch(toggleFavProduct({ id: product.id }));
   };
 
   const addToCart = () => {
@@ -91,6 +88,7 @@ const Content = ({ product }: ProductContent) => {
             ))}
           </div>
         </div>
+
         <div className="product-filter-item">
           <h5>
             Size: <strong>See size table</strong>
@@ -107,7 +105,44 @@ const Content = ({ product }: ProductContent) => {
               </select>
             </div>
           </div>
+
+          <div style={{ marginTop: "32px" }}>
+            <button
+              onClick={() => {
+                window.postMessage(
+                  JSON.stringify({
+                    type: "siz3r_tryon",
+                    garment:
+                      "https://ecommerce-template-wnnm.vercel.app" +
+                      product.images[0],
+                    bodyPart: "upper",
+                    token:
+                      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJ6a3FxZ2JoZ3ZvNXpmdWo4YTF0ZmgiLCJidXNpbmVzc0lkIjoiZ1JvczdVYlhDR05MTnQzOHZ2UjdqdnJIOThyMSIsImlhdCI6MTc1MzM1ODY2NywiZXhwIjoxODM5NjcyMjY3fQ.-ID7Kq-UzrA8r6sndkGNhBRywCgUjDjktA1FpntDKRI",
+                  }),
+                  "*"
+                );
+              }}
+              className="btn btn--rounded"
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              style={{
+                backgroundColor: hovered ? "#B05FCC" : "#9F4DB6",
+                color: hovered ? "#ffffff" : "#90ee90",
+                fontWeight: "bold",
+                padding: "12px 24px",
+                borderRadius: "8px",
+                fontSize: "14px",
+                width: "40%",
+                border: "none",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+              }}
+            >
+              Przymierz z Siz3r
+            </button>
+          </div>
         </div>
+
         <div className="product-filter-item">
           <h5>Quantity:</h5>
           <div className="quantity-buttons">
