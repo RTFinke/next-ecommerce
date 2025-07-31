@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
 const Product = ({ product }: ProductPageType) => {
   const [showBlock, setShowBlock] = useState("description");
-
+  console.debug(product)
   return (
     <Layout>
       <Breadcrumb />
@@ -51,7 +51,7 @@ const Product = ({ product }: ProductPageType) => {
           window.postMessage(
             JSON.stringify({
               type: "siz3r_tryon",
-              ggarment: product.images[0],
+              garment: "https://ecommerce-template-wnnm.vercel.app"+product.images[0],             
               bodyPart: "upper", // "upper" / "lower" / "full"
               token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJ6a3FxZ2JoZ3ZvNXpmdWo4YTF0ZmgiLCJidXNpbmVzc0lkIjoiZ1JvczdVYlhDR05MTnQzOHZ2UjdqdnJIOThyMSIsImlhdCI6MTc1MzM1ODY2NywiZXhwIjoxODM5NjcyMjY3fQ.-ID7Kq-UzrA8r6sndkGNhBRywCgUjDjktA1FpntDKRI",
             }),
