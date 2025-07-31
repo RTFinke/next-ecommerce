@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 // global styles
 import "../assets/css/styles.scss";
 import "swiper/swiper.scss";

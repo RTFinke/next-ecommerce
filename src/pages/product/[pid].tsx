@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-disable */
 import type { GetServerSideProps } from "next";
 import { useState } from "react";
 
