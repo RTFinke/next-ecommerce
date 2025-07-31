@@ -9,11 +9,6 @@ const ProductsLoading = () => {
       <ProductItemLoading />
       <ProductItemLoading />
       <ProductItemLoading />
-      <ProductItemLoading />
-      <ProductItemLoading />
-      <ProductItemLoading />
-      <ProductItemLoading />
-      <ProductItemLoading />
     </section>
   );
 };
