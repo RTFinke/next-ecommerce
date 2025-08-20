@@ -23,6 +23,18 @@ export const productsSizes = [
     id: "6",
     label: "XXL",
   },
+  {
+    id: "7",
+    label: "XXL",
+  },
+  {
+    id: "8",
+    label: "XXL",
+  },
+  {
+    id: "9",
+    label: "XXL",
+  },
 ];
 
 export default productsSizes;

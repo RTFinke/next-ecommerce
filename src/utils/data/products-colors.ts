@@ -29,6 +29,21 @@ export const productsColors = [
     label: "Blue",
     color: "#0F73AD",
   },
+   {
+    id: "7",
+    label: "Blue",
+    color: "#0F73AD",
+  },
+   {
+    id: "8",
+    label: "Blue",
+    color: "#0F73AD",
+  },
+   {
+    id: "9",
+    label: "Blue",
+    color: "#0F73AD",
+  },
 ];
 
 export default productsColors;
