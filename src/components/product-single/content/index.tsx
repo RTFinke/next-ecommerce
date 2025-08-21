@@ -140,7 +140,7 @@ const Content = ({ product }: ProductContent) => {
                 transition: "all 0.3s ease",
               }}
             >
-              Przymierz z Siz3r
+              Try-on with Siz3r
             </button>
           </div>
         </div>
