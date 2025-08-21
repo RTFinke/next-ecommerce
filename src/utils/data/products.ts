@@ -602,7 +602,7 @@ export const products = [
   },
   {
     id: "11",
-    name: "Bershka - Standard tee",
+    name: "Bershka - Standard T-shirt",
     price: 119.99,
     quantityAvailable: 2,
     category: "T-shirt",
