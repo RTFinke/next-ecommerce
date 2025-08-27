@@ -1,3 +1,4 @@
+/* prettier-ignore */
 export const productsColors = [
   {
     id: "1",
