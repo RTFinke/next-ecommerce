@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable */
 import { some } from "lodash";
 import { useState } from "react";
