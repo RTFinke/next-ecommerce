@@ -39,7 +39,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     {/* prettier-ignore */}
     <script
         id="siz3r_plugin"
-        src="https://https://siz3r.vercel.app/embedScript.js"
+        src="https://https://siz3r-prod.vercel.app/embedScript.js"
         noreload="true"
       />
     <Component {...pageProps} />

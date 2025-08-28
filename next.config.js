@@ -5,3 +5,9 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
 }
+module.exports = {
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
+  },
+}
