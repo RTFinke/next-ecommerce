@@ -18,7 +18,7 @@ const IndexPage = () => {
           >
             <div className="featured-item__content">
               <h3>New arrivals are now in!</h3>
-              <a href="#" className="btn btn--rounded">
+              <a href="/products" className="btn btn--rounded">
                 Show Collection
               </a>
             </div>

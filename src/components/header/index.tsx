@@ -18,7 +18,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
   const arrayPaths = ["/"];
 
   const [onTop, setOnTop] = useState(
-    !(!arrayPaths.includes(router.pathname) || isErrorPage),
+    !(!arrayPaths.includes(router.pathname) || isErrorPage)
   );
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -70,8 +70,8 @@ const Header = ({ isErrorPage }: HeaderType) => {
           className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
         >
           <Link href="/products">Products</Link>
-          <a href="#">Inspiration</a>
-          <a href="#">Rooms</a>
+          <Link href="/products">Inspiration</Link>
+          <Link href="/products">Rooms</Link>
           <button className="site-nav__btn">
             <p>Account</p>
           </button>
