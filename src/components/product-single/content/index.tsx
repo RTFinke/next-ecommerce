@@ -112,18 +112,29 @@ const Content = ({ product }: ProductContent) => {
             {/* prettier-ignore */}
             <button
               onClick={() => {
-                window.postMessage(
+                fetch("/api/siz3rProxy",{
+                  method: "POST",
+                 body:JSON.stringify({
+                  garment:"https://ecommerce-template-wnnm.vercel.app" +
+                      product.images[0], 
+                  type:"upper", 
+                 })
+                }).then((response) => response.json())
+                .then((data) => {
+                  window.postMessage(
                   JSON.stringify({
                     type: "siz3r_tryon",
-                    garment:
-                      "https://ecommerce-template-wnnm.vercel.app" +
-                      product.images[0],
-                    bodyPart: "upper",
-                    token:
-                      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJ6a3FxZ2JoZ3ZvNXpmdWo4YTF0ZmgiLCJidXNpbmVzc0lkIjoiZ1JvczdVYlhDR05MTnQzOHZ2UjdqdnJIOThyMSIsImlhdCI6MTc1MzM1ODY2NywiZXhwIjoxODM5NjcyMjY3fQ.-ID7Kq-UzrA8r6sndkGNhBRywCgUjDjktA1FpntDKRI",
+                    token:data.token,
+                    productInfo:{
+                      name:product.name,
+                      price:product.currentPrice,
+                      currency:"$"
+                    }
                   }),
                   "*"
                 );
+                })
+                .catch((error) => console.error("Error:", error));
               }}
               className="btn btn--rounded"
               onMouseEnter={() => setHovered(true)}
